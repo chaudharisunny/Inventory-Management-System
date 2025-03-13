@@ -1,9 +1,10 @@
 const express = require('express')
 const app = express()
-const port = 3000
 const indexRoutes=require('./routes/index')
 const cookieParser=require('cookie-parser')
+require('dotenv').config()
 const connectDB=require('./models/db')
+const port = process.env.PORT
 
 //connect database
 connectDB()
