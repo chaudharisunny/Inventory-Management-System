@@ -1,5 +1,6 @@
 const Product=require('../models/products');
 
+//all products
 const getProducts=async(req,res)=>{
     try {
         const getAllProd=await Product.find()
@@ -9,6 +10,7 @@ const getProducts=async(req,res)=>{
     }
 }
 
+//new product
 const postProducts=async(req,res)=>{
    try {
           const { name,categoryId,supplierId,quantity,price } = req.body;
@@ -27,6 +29,7 @@ const postProducts=async(req,res)=>{
       }
 }
 
+//update product
 const editProducts=async(req,res)=>{
   try {
           const { name,categoryId,supplierId,quantity,price } = req.body; 
@@ -54,6 +57,7 @@ const editProducts=async(req,res)=>{
       }
 }
 
+//delete product
 const deleteProducts=async(req,res)=>{
     try {
            const {id}=req.params;
